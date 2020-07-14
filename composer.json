@@ -1,0 +1,51 @@
+{
+    "name": "leovie/iot-data-receiver",
+    "authors": [
+        {
+            "name": "Leo Viezens",
+            "email": "leo.viezens@web.de"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeoVie\\IotDataReceiver\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LeoVie\\IotDataReceiver\\Test\\": "test/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "phpstan/phpstan": "^0.12.32",
+        "infection/infection": "^0.16.4"
+    },
+    "scripts": {
+        "phpstan": [
+            "phpstan analyse -c build/config/phpstan.neon"
+        ],
+        "phpunit": [
+            "phpunit -c build/config/phpunit.xml test"
+        ],
+        "infection": [
+            "infection --only-covered --configuration=build/config/infection.json --min-msi=60 --min-covered-msi=60 --coverage=../../build/coverage --threads=4"
+        ],
+        "infection-ci": [
+            "@infection -- --skip-initial-tests"
+        ],
+        "test": [
+            "@phpstan",
+            "@phpunit",
+            "@infection-ci"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
