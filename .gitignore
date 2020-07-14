@@ -2,6 +2,7 @@
 /bin
 /build/cache
 !/build/cache/.gitkeep
+build/coverage
 !/build/coverage/.gitkeep
 /build/logs
 /.idea
