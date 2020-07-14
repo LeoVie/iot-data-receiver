@@ -1,0 +1,1 @@
+![PHP Composer](https://github.com/LeoVie/iot-data-receiver/workflows/PHP%20Composer/badge.svg)
