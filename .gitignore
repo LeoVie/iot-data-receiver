@@ -1,6 +1,8 @@
 /vendor
 /bin
 /build/cache
+!/build/cache/.gitkeep
+!/build/coverage/.gitkeep
 /build/logs
 /.idea
 composer.lock
